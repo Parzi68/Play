@@ -1,0 +1,7 @@
+- name: Delete play
+  hosts: 172.17.0.3
+  tasks:
+    - name: Deleting a file
+      ansible.builtin.file:
+        state: absent
+        path: /delete_me
