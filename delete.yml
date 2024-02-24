@@ -1,5 +1,5 @@
 - name: Delete play
-  hosts: 172.17.0.3
+  hosts: machine
   tasks:
     - name: Deleting a file
       ansible.builtin.file:
