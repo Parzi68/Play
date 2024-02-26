@@ -5,7 +5,7 @@
   tasks:
     - name: Delete Kafka logs
       docker_container:
-        name: kafka1
+        name: kafka-dashboard-kafka1-1
         state: absent
         command: ["bash", "-c", "rm -rf /opt/kafka/logs"]
      # loop: "{{ groups['kafka_servers'] }}"
