@@ -1,8 +1,13 @@
 - name: Delete Kafka logs
   hosts: kafka_servers
   tasks:
-    - name: Delete Kafka logs
-      community.docker.docker_container_exec_module:
-        name: kafka-dashboard-kafka1-1
-        command: ["bash", "-c", "rm -rf /opt/kafka/logs"]
-        state: present
+    - name: Run a simple command (command)
+      community.docker.docker_container_exec:
+       container: kafka1
+       command: /bin/bash -c "rm  -rf /kafka-logs/"
+       chdir: /root
+      register: result
+
+    - name: Print stdout
+      ansible.builtin.debug:
+        var: result.stdout
