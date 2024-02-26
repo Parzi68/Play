@@ -1,11 +1,12 @@
----
-- hosts: kafka_servers
-  connection: docker  # Use the remote_docker connection plugin
+- name: Kafka
+  hosts: kafka_servers
+  #connection: docker  # Use the remote_docker connection plugin
 
   tasks:
     - name: Delete Kafka logs
       docker_container:
         name: kafka-dashboard-kafka1-1
         state: absent
-        command: ["bash", "-c", "rm -rf /opt/kafka/logs"]
+        community.docker.docker_container_exec:
+          command: ["bash", "-c", "rm -rf /opt/kafka/logs"]
      # loop: "{{ groups['kafka_servers'] }}"
