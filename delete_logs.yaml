@@ -2,7 +2,7 @@
   hosts: kafka_servers
   tasks:
     - name: Delete Kafka logs
-      community.docker.docker_container_module:
+      community.docker.docker_container_exec_module:
         name: kafka-dashboard-kafka1-1
         command: ["bash", "-c", "rm -rf /opt/kafka/logs"]
         state: present
