@@ -1,6 +1,6 @@
 ---
 - hosts: kafka_servers
-  connection: remote_docker  # Use the remote_docker connection plugin
+  connection: docker  # Use the remote_docker connection plugin
 
   tasks:
     - name: Delete Kafka logs
