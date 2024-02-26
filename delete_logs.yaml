@@ -3,7 +3,7 @@
   tasks:
     - name: Run a simple command (command)
       community.docker.docker_container_exec:
-       container: kafka1
+       container: kafka-ddashboard-kafka1-1
        command: /bin/bash -c "rm  -rf /kafka-logs/"
        chdir: /root
       register: result
