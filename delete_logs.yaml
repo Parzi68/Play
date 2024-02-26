@@ -1,6 +1,4 @@
-- name: Delete Kafka logs
-  hosts: kafka_servers
-  tasks:
+
     - name: Run a simple command (command)
       community.docker.docker_container_exec:
        container: kafka-ddashboard-kafka1-1
