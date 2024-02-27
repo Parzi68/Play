@@ -1,0 +1,9 @@
+---
+ - name: Adding to pc
+   hosts:  172.30.128.1
+   become: yes
+   tasks:
+    - name: Adding file
+      ansible.builtin.file:
+        path: C:\Users\Smit Anam\Desktop\Added_this
+        state: touch
