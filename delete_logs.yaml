@@ -1,11 +1,7 @@
-
-    - name: Run a simple command (command)
-      community.docker.docker_container_exec:
-       container: kafka-ddashboard-kafka1-1
-       command: /bin/bash -c "rm  -rf /kafka-logs/"
-       chdir: /root
-      register: result
-
-    - name: Print stdout
-      ansible.builtin.debug:
-        var: result.stdout
+---
+ - name: Add a file
+   tasks: 
+    - name: Adding a file
+      ansible.builtin.file:
+        path: C:\Users\Smit Anam\Desktop
+        state: touch
