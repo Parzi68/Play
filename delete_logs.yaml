@@ -1,6 +1,7 @@
 ---
  - name: Add a file
    hosts: 172.17.0.3
+   become: yes
    tasks: 
     - name: Adding a file
       ansible.builtin.file:
